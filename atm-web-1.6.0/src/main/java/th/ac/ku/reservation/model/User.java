@@ -1,10 +1,23 @@
-package th.ac.ku.atm.model;
+package th.ac.ku.reservation.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+
+
+    @Id
     private String id;
     private String name;
     private String password;
     private String phone;
+
+    public User() {
+
+    }
+
     public String getPhone() {
         return phone;
     }

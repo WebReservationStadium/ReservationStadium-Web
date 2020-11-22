@@ -1,4 +1,4 @@
-package th.ac.ku.atm.controller;
+package th.ac.ku.reservation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

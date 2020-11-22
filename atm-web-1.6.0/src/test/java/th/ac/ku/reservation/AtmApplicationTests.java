@@ -1,4 +1,4 @@
-package th.ac.ku.atm;
+package th.ac.ku.reservation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

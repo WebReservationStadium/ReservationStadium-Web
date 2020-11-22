@@ -1,4 +1,4 @@
-package th.ac.ku.atm;
+package th.ac.ku.reservation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

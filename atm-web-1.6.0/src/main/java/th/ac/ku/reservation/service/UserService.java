@@ -1,41 +1,45 @@
-package th.ac.ku.atm.service;
+package th.ac.ku.reservation.service;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import th.ac.ku.atm.model.User;
+import th.ac.ku.reservation.data.UserRepository;
+import th.ac.ku.reservation.model.User;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class UserService {
+    private UserRepository repository;
 
-    private List<User> userList;
-
-    @PostConstruct
-    public void postConstruct(){
-        this.userList = new ArrayList<>();
-
+    public UserService(UserRepository repository){
+        this.repository = repository;
     }
+
+//    @PostConstruct
+//    public void postConstruct(){
+//        this.userList = new ArrayList<>();
+//
+//    }
 
     public  void createUser(User user){
         //hashpin for user
         String hashPin = hash(user.getPassword());
         user.setPassword(hashPin);
-        userList.add(user);
+        repository.save(user);
     }
 
-    public List<User> getUserList(){
-        return  new ArrayList<>(this.userList);
+    public List<User> getUser(){
+        return  repository.findAll();
     }
 
     public User findUser(String id){
-        for (User user : userList){
-            if(user.getId().equals(id))
-                return user;
-        }
-        return null;
+       try{
+           return repository.findById(id).get();
+       }catch (NoSuchElementException e){
+           return null;
+       }
     }
 
     public User checkPin(User inputUser){
