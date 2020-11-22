@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/atm-web-1.6.0/atm.iml" filepath="$PROJECT_DIR$/atm-web-1.6.0/atm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reservation-web/atm.iml" filepath="$PROJECT_DIR$/reservation-web/atm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/reservationStadium.iml" filepath="$PROJECT_DIR$/.idea/reservationStadium.iml" />
     </modules>
   </component>
