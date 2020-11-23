@@ -12,19 +12,5 @@ import java.util.List;
 @Service
 public class ReservedStadiumService {
 
-    private StadiumRepository repository;
-
-    public ReservedStadiumService(StadiumRepository repository){
-        this.repository=repository;
-    }
-    public List<ReservedStadium> getStadium(){
-        return  repository.findAll();
-    }
-    public void saveReservedStadium(ReservedStadium reservedStadium){
-        repository.save(reservedStadium);
-    }
-    public void getUserId(int id){
-        repository.findById(id).get();
-    }
 
 }

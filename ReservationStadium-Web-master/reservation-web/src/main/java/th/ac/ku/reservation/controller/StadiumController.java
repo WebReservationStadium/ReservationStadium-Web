@@ -12,17 +12,10 @@ import th.ac.ku.reservation.service.ReservedStadiumService;
 @Controller
 public class StadiumController {
 
-    private ReservedStadiumService reservedStadiumService;
     @RequestMapping("/stadium")
-    public String getHomePage(Model model){
+    public String getStadiumPage(Model model){
         return "stadium"; // stadium template (.html)
     }
 
 
-    @PostMapping
-    public String registerStadium(@ModelAttribute ReservedStadium reservedStadium, Model model){
-        reservedStadiumService.saveReservedStadium(reservedStadium);
-        model.addAttribute("all", reservedStadiumService.getStadium());
-        return "redirect:stadium";
-    };
 }
