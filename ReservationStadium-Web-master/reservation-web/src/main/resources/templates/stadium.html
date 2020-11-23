@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/main_layout}"
+      xmlns:th="https://www.thymeleaf.org">
+<div  layout:fragment="content" class="container">
 <head>
     <meta charset="UTF-8">
     <title>Ball Stadium</title>
 </head>
+    <form th:action="@{/stadium}" method="POST">
+        <div class="form-group">
+            <label for="inputId">Stadium</label>
+            <input type="input" class="form-control" name="id" id="inputId">
+        </div>
+        <div class="form-group">
+            <label for="inputDate">Date</label>
+            <input type="input" class="form-control" name="date" id="inputDate">
+        </div>
+        <div class="form-group">
+            <label for="inputTimeStart">Start</label>
+            <input type="password" class="form-control" name="timeStart" id="inputTimeStart">
+        </div>
+        <div class="form-group">
+            <label for="inputTimeEnd">End</label>
+            <input type="input" class="form-control" name="timeEnd" id="inputTimeEnd">
+        </div>
+        <div class="form-group">
+            <label for="inputName">End</label>
+            <input type="input" class="form-control" name="name" id="inputName">
+        </div>
+
+
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary">
+        </div>
+    </form>
 <body>
-<h1>HELLO</h1>
+<h1>วันที่ 24 พ.ย. 2563</h1>
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">9.00-10.00</th>
+        <th scope="col">10.00-11.00</th>
+        <th scope="col">11.00-12.00</th>
+        <th scope="col">12.00-13.00</th>
+        <th scope="col">13.00-14.00</th>
+        <th scope="col">14.00-15.00</th>
+        <th scope="col">15.00-16.00</th>
+        <th scope="col">16.00-17.00</th>
+        <th scope="col">17.00-18.00</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td></td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

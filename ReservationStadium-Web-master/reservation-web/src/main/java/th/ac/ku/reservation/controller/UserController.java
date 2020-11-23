@@ -31,7 +31,6 @@ public class UserController {
 
     @PostMapping
     public String registerUser(@ModelAttribute User user, Model model){
-
         userService.createUser(user);
         model.addAttribute("allUsers", userService.getUser());
         return "redirect:user";
