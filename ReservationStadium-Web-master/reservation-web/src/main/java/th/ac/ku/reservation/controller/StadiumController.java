@@ -22,7 +22,7 @@ public class StadiumController {
     @PostMapping
     public String registerStadium(@ModelAttribute ReservedStadium reservedStadium, Model model){
         reservedStadiumService.saveReservedStadium(reservedStadium);
-        //model.addAttribute("all", reservedStadiumService.getUserId());
+        model.addAttribute("all", reservedStadiumService.getStadium());
         return "redirect:stadium";
     };
 }
