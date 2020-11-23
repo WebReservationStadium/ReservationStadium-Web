@@ -2,12 +2,20 @@ package th.ac.ku.reservation.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.sql.Time;
 
+
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
 public class ReservedStadium {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private int userId;
