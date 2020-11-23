@@ -25,7 +25,7 @@ public class UserRestController {
         }
 
         @GetMapping("/{id}")
-        public User getOne(@PathVariable String id){
+        public User getOne(@PathVariable Integer id){
             return userService.findUser(id);
         }
 }

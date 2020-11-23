@@ -1,15 +1,21 @@
 package th.ac.ku.reservation.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class User {
 
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String password;
     private String phone;
@@ -29,18 +35,18 @@ public class User {
 
 
 
-    public User(String id, String name, String pin, String phone) {
+    public User(Integer id, String name, String pin, String phone) {
         this.id = id;
         this.name = name;
         this.password = pin;
         this.phone = phone;
     }
 
-    public String  getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

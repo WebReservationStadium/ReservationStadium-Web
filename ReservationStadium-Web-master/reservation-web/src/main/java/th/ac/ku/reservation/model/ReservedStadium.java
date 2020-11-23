@@ -18,10 +18,19 @@ public class ReservedStadium {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int userId;
-    private Date day;
-    private Time start;
-    private Time end;
+    public int getStadium() {
+        return stadium;
+    }
+
+    public void setStadium(int stadium) {
+        this.stadium = stadium;
+    }
+
+    private int stadium;
+    private String name;
+    private String day;
+    private String start;
+    private String end;
     private boolean status;
 
     public int getId() {
@@ -32,27 +41,27 @@ public class ReservedStadium {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Time getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Time start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Time getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Time end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
@@ -64,11 +73,11 @@ public class ReservedStadium {
         this.status = status;
     }
 
-    public Date getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(Date day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
@@ -76,7 +85,8 @@ public class ReservedStadium {
     public String toString() {
         return "reservedStadium{" +
                 "id=" + id +
-                ", userId=" + userId +
+                "stadium=" + stadium +
+                ", userId=" + name +
                 ", day=" + day +
                 ", start=" + start +
                 ", end=" + end +

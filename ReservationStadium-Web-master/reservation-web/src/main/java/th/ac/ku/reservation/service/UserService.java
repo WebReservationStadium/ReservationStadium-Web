@@ -1,7 +1,6 @@
 package th.ac.ku.reservation.service;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import th.ac.ku.reservation.data.UserRepository;
 import th.ac.ku.reservation.model.User;
@@ -34,7 +33,7 @@ public class UserService {
         return  repository.findAll();
     }
 
-    public User findUser(String id){
+    public User findUser(Integer id){
        try{
            return repository.findById(id).get();
        }catch (NoSuchElementException e){
