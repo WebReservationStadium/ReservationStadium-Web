@@ -22,9 +22,7 @@ public class UserController {
 
     @GetMapping
     public String getUserPage(Model model){
-
         model.addAttribute("allUsers", userService.getUser());
-
         return "user"; // customer.html
     }
 
