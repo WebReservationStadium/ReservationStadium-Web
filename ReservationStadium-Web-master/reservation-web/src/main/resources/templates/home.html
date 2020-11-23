@@ -4,6 +4,10 @@
       xmlns:th="https://www.thymeleaf.org">
 <div layout:fragment="content" class="container">
     <div class="jumbotron">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+        <link th:rel="stylesheet" th:href="@{css/mystyle.css}">
+
 
 <h1 class="display-4 my-font" th:text="${greeting}"></h1>
 
